@@ -1,0 +1,76 @@
+\documentclass[pdftex,cyrillic,14pt,a4page,book]{extreport}
+\usepackage[bulgarian]{babel}
+
+\usepackage[margin=2cm]{geometry}% http://ctan.org/pkg/geometry
+\usepackage[pdftex]{graphicx}
+
+\usepackage{afterpage}
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \newpage}
+
+
+\begin{document}
+\begin{titlepage}
+	\begin{center}
+	\includegraphics[scale=1.2]{./NBU_logo.jpg}\\[0.3cm]
+    \textbf{\Large НОВ БЪЛГАРСКИ УНИВЕРСИТЕТ\\[0.4cm]}
+    \textbf{\Large Департамент Информатика\\[0.4cm]}
+    \textbf{\Large Бакалавърка програма Информатика\\[4cm]}
+   
+		\textbf{\LARGE Автоматизиран биоинформатичен анализ на генетични варианти, потенциално свързани със стареенето\\[2cm]}
+		\begin{Large}
+		Дипломна работа на\\[0.2cm]
+		Михаил М. Здравков\\[3.2cm]
+		\end{Large}
+		\begin{minipage}{0.48\textwidth}
+			\begin{flushleft} \large
+				\emph{Научни ръководители:} \\
+				доц. д-р Милена Георгиева \\
+				Момчил Топалов
+			\end{flushleft}
+		\end{minipage}
+			\begin{minipage}{0.48\textwidth}
+			\begin{flushright} \large
+				\emph{Ръководител катедра:} \\
+				гл. ас. д-р Методи Трайков\\
+				\clearpage
+			\end{flushright}
+		\end{minipage}
+
+		\vfill
+
+		% Bottom of the page
+		{\large София 2022}
+
+	\end{center}
+\end{titlepage}
+
+
+\afterpage{\blankpage}
+
+% Include title page and blank page in page numbering
+\addtocounter{page}{1}
+
+\tableofcontents
+\pagebreak
+\afterpage{\blankpage}
+
+
+\newgeometry{
+	left=30mm,
+    right=20mm,
+    top=20mm,
+    bottom=20mm}
+
+
+\chapter*{Увод}
+\addcontentsline{toc}{chapter}{Увод}
+\paragraph{}
+
+Стареенето е естествен процес, който има огромно значение както за отделния индивид, така и за обществото като цяло.
+
+
+            
+\end{document}
