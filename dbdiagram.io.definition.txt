@@ -1,0 +1,90 @@
+Table files {
+  hash VARCHAR(40) [pk]
+  name VARCHAR(1000) [not null]
+  path VARCHAR(1000) [not null]
+  genome_ref VARCHAR(64) [not null]
+  created_at TIMESTAMP [not null]
+  status VARCHAR(32) [not null]
+}
+
+Table tasks {
+  id UINTEGER [pk]
+  created_at TIMESTAMP
+  file_hash VARCHAR(40) [not null]
+}
+
+Ref: tasks.file_hash > files.hash
+
+Table genes {
+  file_hash VARCHAR(40) [pk]
+  gene_hgnc VARCHAR [pk]
+}
+
+Ref: genes.file_hash > files.hash
+
+Table variants {
+  file_hash VARCHAR(40) [pk]
+  gene_hgnc VARCHAR [pk]
+  gene_variation UINTEGER [pk]
+
+  chrom VARCHAR
+  pos LONG
+  id VARCHAR
+  ref VARCHAR
+  alt VARCHAR[]
+  qual DOUBLE
+  filter VARCHAR[]
+  info JSON
+  format VARCHAR
+
+  start_pos UBIGINT
+  end_pos UBIGINT
+  alleles VARCHAR[]
+  affected_start UBIGINT
+  affected_end UBIGINT
+  var_type VARCHAR
+  var_subtype VARCHAR
+}
+
+Ref: variants.(file_hash, gene_hgnc) > genes.(file_hash, gene_hgnc)
+
+Table annotations {
+  file_hash VARCHAR(40) [pk]
+  gene_hgnc VARCHAR [pk]
+  gene_variation UINTEGER [pk]
+  variation_annotation UINTEGER [pk]
+
+  alt VARCHAR
+  effect VARCHAR
+  impact VARCHAR
+  gene VARCHAR
+  gene_id VARCHAR
+  feature_type VARCHAR
+  feature_id VARCHAR
+  transcript_biotype VARCHAR
+  rank_to_total VARCHAR
+  hgvs_dna VARCHAR
+  hgvs_protein VARCHAR
+  cdna_pos_to_cdna_len VARCHAR
+  cds_pos_to_cds_len VARCHAR
+  prot_pos_to_prot_len VARCHAR
+  distance_to_feature VARCHAR
+  note VARCHAR
+}
+
+Ref: annotations.(file_hash, gene_hgnc, gene_variation) > variants.(file_hash, gene_hgnc, gene_variation)
+
+Table gene_sets {
+  id UINTEGER [pk]
+  name VARCHAR(1000) [not null]
+  description VARCHAR(1000) [not null]
+  created_at TIMESTAMP [not null]
+}
+
+Table gene_set_members {
+  id UINTEGER [pk]
+  gene_set_id UINTEGER [not null]
+  name VARCHAR(1000) [not null]
+}
+
+Ref: gene_set_members.gene_set_id > gene_sets.id
