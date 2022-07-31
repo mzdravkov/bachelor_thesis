@@ -1540,3 +1540,33 @@ doi = {10.1109/BigDataCongress.2015.41}
   publisher={Cold Spring Harbor Laboratory}
 }
 
+@Article{du2021,
+  author={Du, Zongyang and Su, Hong and Wang, Wenkai and Ye, Lisha and Wei, Hong and Peng, Zhenling and Anishchenko, Ivan and Baker, David and Yang, Jianyi},
+  title={The trRosetta server for fast and accurate protein structure prediction},
+  journal={Nature Protocols},
+  year={2021},
+  month={Dec},
+  day={01},
+  volume={16},
+  number={12},
+  pages={5634-5651},
+  abstract={The trRosetta (transform-restrained Rosetta) server is a web-based platform for fast and accurate protein structure prediction, powered by deep learning and Rosetta. With the input of a protein's amino acid sequence, a deep neural network is first used to predict the inter-residue geometries, including distance and orientations. The predicted geometries are then transformed as restraints to guide the structure prediction on the basis of direct energy minimization, which is implemented under the framework of Rosetta. The trRosetta server distinguishes itself from other similar structure prediction servers in terms of rapid and accurate de novo structure prediction. As an illustration, trRosetta was applied to two Pfam families with unknown structures, for which the predicted de novo models were estimated to have high accuracy. Nevertheless, to take advantage of homology modeling, homologous templates are used as additional inputs to the network automatically. In general, it takes {\textasciitilde}1 h to predict the final structure for a typical protein with {\textasciitilde}300 amino acids, using a maximum of 10 CPU cores in parallel in our cluster system. To enable large-scale structure modeling, a downloadable package of trRosetta with open-source codes is available as well. A detailed guidance for using the package is also available in this protocol. The server and the package are available at https://yanglab.nankai.edu.cn/trRosetta/and https://yanglab.nankai.edu.cn/trRosetta/download/, respectively.},
+  issn={1750-2799},
+  doi={10.1038/s41596-021-00628-9},
+  url={https://doi.org/10.1038/s41596-021-00628-9}
+}
+
+@Article{pereira2021,
+  author = {Pereira, Joana and Simpkin, Adam J. and Hartmann, Marcus D. and Rigden, Daniel J. and Keegan, Ronan M. and Lupas, Andrei N.},
+  title = {High-accuracy protein structure prediction in CASP14},
+  journal = {Proteins: Structure, Function, and Bioinformatics},
+  volume = {89},
+  number = {12},
+  pages = {1687-1699},
+  keywords = {CASP14, high-accuracy, molecular replacement},
+  doi = {https://doi.org/10.1002/prot.26171},
+  url = {https://onlinelibrary.wiley.com/doi/abs/10.1002/prot.26171},
+  eprint = {https://onlinelibrary.wiley.com/doi/pdf/10.1002/prot.26171},
+  abstract = {Abstract The application of state-of-the-art deep-learning approaches to the protein modeling problem has expanded the “high-accuracy” category in CASP14 to encompass all targets. Building on the metrics used for high-accuracy assessment in previous CASPs, we evaluated the performance of all groups that submitted models for at least 10 targets across all difficulty classes, and judged the usefulness of those produced by AlphaFold2 (AF2) as molecular replacement search models with AMPLE. Driven by the qualitative diversity of the targets submitted to CASP, we also introduce DipDiff as a new measure for the improvement in backbone geometry provided by a model versus available templates. Although a large leap in high-accuracy is seen due to AF2, the second-best method in CASP14 out-performed the best in CASP13, illustrating the role of community-based benchmarking in the development and evolution of the protein structure prediction field.},
+  year = {2021}
+}
